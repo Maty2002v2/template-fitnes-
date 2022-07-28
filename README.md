@@ -1,4 +1,4 @@
-# Zgadnij słowo
+# Biznes is fitness
 
 > Podgląd na żywo [_tutaj_](https://radiant-monstera-29512f.netlify.app/).
 
