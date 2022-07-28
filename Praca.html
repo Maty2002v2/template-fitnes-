@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="pl">
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700i,900" rel="stylesheet">
+<link rel="stylesheet" href="css/fontello.css" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	.start {
+		background-image: url('obar1.jpg');
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.obraz1,
+	.obraz2,
+	.obraz3 {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		opacity: 0.80;
+	}
+
+	.logo {
+		transform: scale(1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-height: 100px;
+		background: white;
+		opacity: 0.90;
+		color: black;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		padding: 10px;
+		padding-left: 50px;
+		padding-right: 50px;
+		font-size: 25px;
+		box-shadow: 1px 1px 10px black,
+			1px 1px 20px black;
+		box-sizing: border-box;
+	}
+
+	.animacja2 {
+		animation: animation2 0.6s linear;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes animation2 {
+		0% {
+			transform: scale(1.5);
+			opacity: 0;
+		}
+
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
+
+	}
+
+	.navbar {
+		position: fixed;
+		display: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background: transparent;
+		z-index: 1;
+	}
+
+	.off {
+		display: none;
+	}
+
+	.display {
+		display: block;
+	}
+
+	.navbar ul,
+	.navbarScroll ul {
+		list-style: none;
+		display: flex;
+	}
+
+	.navbar ul li,
+	.navbarScroll ul li {
+		list-style: none;
+		font-weight: 600;
+		letter-spacing: 1px;
+		transition: 0.3s linear;
+	}
+
+	.navbar ul li a,
+	.navbarScroll ul li a {
+		display: block;
+		text-decoration: none;
+		color: #565656;
+		text-align: center;
+		padding: 15px 20px 15px 20px;
+	}
+
+	.navbar ul li:hover a,
+	.navbarScroll ul li:hover a {
+		color: ;
+	}
+
+
+	.navbar .burger,
+	.navbarScroll .burger {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		display: none;
+		transform: translateY(-50%);
+		width: 35px;
+		height: 35px;
+		background: transparent;
+		border: none;
+		z-index: 999;
+	}
+
+	.burger::after {
+		content: '';
+		position: absolute;
+		top: 15%;
+		left: 0;
+		background: #626262;
+		width: 100%;
+		height: 3px;
+		transition: .8s ease;
+		box-shadow: 0px 10px #626262;
+	}
+
+	.burger::before {
+		content: '';
+		position: absolute;
+		top: 75%;
+		left: 0;
+		background: #626262;
+		width: 100%;
+		height: 3px;
+		transition: 0.8s ease;
+	}
+
+	.navbarScroll {
+		position: fixed;
+		display: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background: white;
+		z-index: 2;
+		box-shadow: 1px 0px 5px black;
+		transform: translateY(-150%);
+		transition: .2s linear;
+	}
+
+	.cointainer-Omnie {
+		max-width: 980px;
+		margin: 0px auto;
+		margin-bottom: 40px;
+
+	}
+
+	.grid-Omnie {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		margin-top: 30px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.item1-Omnie {
+		grid-column: 1/3;
+		grid-row: 1/3;
+	}
+
+	.opis h1 {
+		font-weight: 300;
+		text-align: center;
+		color: #626262;
+		text-transform: uppercase;
+		font-size: 25px;
+	}
+
+	.opis p:nth-child(2) {
+		font-weight: 300;
+		text-align: center;
+		color: #626262;
+		font-family: sans-serif;
+		letter-spacing: 1px;
+		margin-top: 20px;
+		font-style: italic;
+		opacity: 0.90;
+	}
+
+	.opis p:nth-child(3) {
+		line-height: 25px;
+		color: #626262;
+		font-size: 15px;
+	}
+
+	.item2-Omnie {
+		transition: .3s linear;
+		max-height: 460px;
+		overflow: hidden;
+	}
+
+	.item2-Omnie img {
+		width: 100%;
+		filter: grayscale(70%) blur(2px);
+		transition: 0.3s linear;
+	}
+
+	.item2-Omnie:hover img {
+		filter: grayscale(0%);
+		transform: scale(1.2);
+	}
+
+	.item2-Omnie:hover {
+		box-shadow: 0px 0px 15px gray;
+	}
+
+	.item3-Omnie p {
+		line-height: 25px;
+		color: #626262;
+		font-size: 14px;
+	}
+
+	.skill {
+		max-width: 980px;
+		margin: 0px auto;
+		margin-bottom: 20px;
+		padding: 0px 20px 0px 20px;
+	}
+
+	div.skill p {
+		font-size: 15px;
+		letter-spacing: 2px;
+		margin-top: 20px;
+		letter-spacing: 2px;
+	}
+
+	.skill h2 {
+		text-align: center;
+		font-weight: 300;
+		font-size: 18px;
+		color: #626262;
+	}
+
+	.skill .wykres {
+		max-width: 980px;
+		height: 30px;
+		background: #ECECEC;
+		position: relative;
+	}
+
+	.skill .wykres div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background: #626262;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	.skill .wykres .pie {
+		width: 80%;
+	}
+
+	.skill .wykres .dru {
+		width: 65%;
+	}
+
+	.skill .wykres .trz {
+		width: 90%;
+	}
+
+	.grid-opinia {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: 60px;
+	}
+
+	.item-opinia {
+		background: #626262;
+		height: 150px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
+		color: white;
+	}
+
+	.item-opinia h1 {
+		font-size: 25px;
+		font-weight: 600;
+	}
+
+	.podopieczni {
+		background-image: url(obra2.jpg);
+		min-height: 400px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 60px;
+		letter-spacing: 5px;
+		font-weight: 400;
+	}
+
+	.grid-oferty {
+		max-width: 80%;
+		margin: 100px auto 100px auto;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 20px;
+	}
+
+	.item-oferty {
+		text-align: center;
+		position: relative;
+		min-height: 500px;
+		padding: 30px;
+		padding-bottom: 0px;
+		transition: .6s linear;
+		opacity: 0;
+	}
+
+	.item-oferty h2 {
+		font-weight: 600;
+		font-size: 30px;
+		margin-bottom: 10px;
+		color: #626262;
+	}
+
+	.item-oferty p {
+		border-bottom: 1px solid #818181;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin: 0px;
+		color: #626262;
+	}
+
+	.item-oferty .pierwszeP {
+		border: none;
+		padding-top: 0px;
+		padding-bottom: 20px;
+		font-size: 15px;
+		font-style: italic;
+		font-weight: 300;
+		font-family: sans-serif;
+	}
+
+	.item-oferty button {
+		margin-top: 35px;
+		display: inline-block;
+		transform: translateX(-50%);
+		height: 45px;
+		width: 100px;
+		border-radius: 50px;
+		border: none;
+		background: #626262;
+		color: white;
+		cursor: pointer;
+		font-weight: 600;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.item-oferty button::after {
+		content: '';
+		width: 0%;
+		height: 100%;
+		background: #ADADAD;
+		position: absolute;
+		top: 0px;
+		left: 0;
+		opacity: 0.3;
+		transition: .4s ease;
+	}
+
+	.item-oferty button:hover::after {
+		width: 100%;
+	}
+
+	.item3-oferty {
+		background: #8d8d8d;
+	}
+
+	.item3-oferty button {
+		background: tomato;
+	}
+
+	.item3-oferty h2 {
+		color: white;
+	}
+
+	.item3-oferty p {
+		color: white;
+	}
+
+	.ZdjKontakt {
+		background-image: url(obra3.jpg);
+		min-height: 400px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 60px;
+		letter-spacing: 5px;
+		font-weight: 400;
+	}
+
+
+
+	nav {
+		width: 100%;
+		height: 50px;
+		background: transparent;
+		position: fixed;
+		top: 0px;
+		z-index: 999;
+	}
+
+	.dwa {
+		position: fixed;
+		display: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background: white;
+		z-index: 2;
+		box-shadow: 1px 0px 5px black;
+		transform: translateY(-600%);
+		transition: .2s linear;
+	}
+
+	.navbarScrollActive {
+		transform: translateY(0);
+		overflow: visible;
+	}
+
+	ul {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	ul li {
+		list-style: none;
+		display: inline-block;
+		letter-spacing: 1px;
+		padding: 15px 20px 15px 20px;
+		transition: .19s linear;
+	}
+
+
+	ul li a {
+		color: #565656;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.parentToggle {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.toggle {
+		margin-top: 10px;
+		margin-right: 20px;
+		box-sizing: border-box;
+		display: none;
+		position: relative;
+		transform: translateY(-50%);
+		width: 30px;
+		height: 35px;
+		background: transparent;
+		border: none;
+		z-index: 999;
+	}
+
+	.toggle:hover {
+		cursor: pointer;
+	}
+
+	.toggle::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0%;
+		background: #626262;
+		width: 35px;
+		height: 3px;
+		transition: .8s ease;
+		box-shadow: 0px 16px #626262;
+	}
+
+	.toggle::before {
+		content: '';
+		position: absolute;
+		top: 75%;
+		left: 0%;
+		background: #626262;
+		width: 35px;
+		height: 3px;
+		transition: 0.8s ease;
+	}
+
+	.grid-kontakt {
+		max-width: 900px;
+		margin: 60px auto 0 auto;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 150px 1fr 1fr;
+		grid-column-gap: 50px;
+	}
+
+	.item1-kontakt {
+		grid-column: 1/4;
+	}
+
+	.item1-kontakt h1 {
+		font-weight: 300;
+		text-align: center;
+		color: #626262;
+		text-transform: uppercase;
+		font-size: 24px
+	}
+
+	.item1-kontakt p {
+		font-weight: 300;
+		text-align: center;
+		color: #626262;
+		font-family: sans-serif;
+		letter-spacing: 1px;
+		margin-top: 20px;
+		font-style: italic;
+		opacity: 0.90;
+	}
+
+
+	.item3-kontakt {
+		grid-column: 2/4;
+		grid-row: 2/3;
+	}
+
+	.item3-kontakt p {
+		font-weight: 500;
+		color: #434343;
+		letter-spacing: 1px;
+		margin-top: 20px;
+		opacity: 0.90;
+	}
+
+	.item3-kontakt i:hover {
+		color: black;
+	}
+
+	.item4-kontakt {
+		grid-column: 2/4;
+		grid-row: 3/4;
+	}
+
+	.item-kontakt .nameParent,
+	.emailParent,
+	.meseParent {
+		position: relative;
+	}
+
+	.item4-kontakt input {
+		height: 28px;
+		width: 200px;
+		border: none;
+		border-bottom: 1px solid #626262;
+		margin: 10px 20px 15px 0px;
+		padding: 5px;
+		box-sizing: border-box;
+		outline: none;
+	}
+
+	.item4-kontakt .mese {
+		width: 440px;
+	}
+
+	.item4-kontakt label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #626262;
+		margin: 10px 20px 10px 0px;
+		padding: 5px;
+		pointer-events: none;
+		transition: .5s ease;
+	}
+
+	.item4-kontakt input:focus~label,
+	.item4-kontakt input:valid~label {
+		top: -25px;
+		left: 0;
+		font-size: 20px;
+		padding-left: 0px;
+		color: black;
+	}
+
+	.item4-kontakt button {
+		margin-top: 30px;
+		width: 160px;
+		height: 40px;
+		background: black;
+		color: white;
+		border: none;
+		text-transform: uppercase;
+		float: right;
+		cursor: pointer;
+	}
+
+	footer {
+		margin-top: 80px;
+		background: black;
+		width: 100%;
+		height: 60px;
+	}
+
+	@media screen and (max-width: 960px) {
+		.grid-kontakt {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(4, 1fr);
+			grid-row-gap: 0px;
+		}
+
+		.item-kontakt {
+			display: none;
+			margin: 0 auto;
+		}
+
+		.item1-kontakt {
+			display: block;
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
+
+		.item2-kontakt {
+			display: block;
+			grid-column: 1/2;
+			grid-row: 2/3;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.item3-kontakt {
+			display: block;
+			grid-column: 1/2;
+			grid-row: 3/4;
+		}
+
+		.item4-kontakt {
+			display: block;
+			grid-column: 1/2;
+			grid-row: 4/5;
+		}
+
+	}
+
+	@media screen and (max-width: 885px) {
+		.grid-oferty {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			grid-row-gap: 30px;
+		}
+
+	}
+
+	@media screen and (max-width: 768px) {
+
+		.toggle {
+			display: block;
+		}
+
+		.active {
+			display: block;
+		}
+
+		ul {
+			width: 100%;
+			display: none;
+		}
+
+		ul li {
+			display: block;
+			background: white;
+			width: 100%;
+		}
+
+		ul li:hover {
+			background: #565656;
+		}
+
+		ul li a {
+			width: 100%;
+		}
+
+		ul li:hover a {
+			color: white;
+		}
+
+	}
+
+	@media screen and (max-width: 661px) {
+		.grid-Omnie {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: 1fr 1fr;
+			grid-row-gap: 30px;
+		}
+
+		.item1-Omnie {
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
+
+		.item2-Omnie {
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+
+		.item3-Omnie {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 558px) {
+
+		.grid-opinia {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 445px) {
+
+		.grid-Omnie {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: 1fr 300px;
+			grid-row-gap: 30px;
+		}
+	}
+</style>
+
+<body>
+
+	<nav>
+		<div class="parentToggle">
+			<div class="toggle menu"></div>
+		</div>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#Omnie"><sup><i class="demo-icon icon-user"></i></sup>O mnie</a></li>
+			<li><a href="#oferty"><sup><i class="demo-icon icon-mail-alt"></i></sup>Pakiety</a></li>
+			<li><a href="#kontakt"><sup><i class="demo-icon icon-th-list"></i></sup>Kontakt</a></li>
+		</ul>
+	</nav>
+
+	<nav class="dwa">
+		<div class="parentToggle">
+			<div class="toggle menu"></div>
+		</div>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#Omnie"><sup><i class="demo-icon icon-user"></i></sup>O mnie</a></li>
+			<li><a href="#oferty"><sup><i class="demo-icon icon-mail-alt"></i></sup>Pakiety</a></li>
+			<li><a href="#kontakt"><sup><i class="demo-icon icon-th-list"></i></sup>Kontakt</a></li>
+		</ul>
+	</nav>
+
+	<div class="start obraz1">
+		<div class="logo">
+			<span style="opacity:1;">Trenuj razem ze mną</span>
+		</div>
+	</div>
+
+	<div id="Omnie">
+
+		<div class="cointainer-Omnie">
+			<div class="grid-Omnie">
+				<div class="item-Omnie item1-Omnie opis">
+					<h1>O mnie</h1>
+					<p>kocham sport</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore mollitia possimus explicabo,
+						eligendi aspernatur et porro labore quia dolorem nemo autem, reprehenderit molestiae
+						consequuntur, praesentium beatae blanditiis ullam eaque debitis? Lorem ipsum dolor sit amet
+						consectetur adipisicing elit. Id possimus aliquam recusandae debitis beatae provident
+						accusantium magnam accusamus adipisci. Distinctio possimus ipsa dolore soluta eum, totam illum
+						adipisci saepe quisquam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
+						consequuntur ex laborum unde, possimus cumque dolore voluptates, suscipit quaerat temporibus
+						veniam atque laudantium sunt excepturi consectetur itaque tempore vitae dignissimos. </p>
+				</div>
+				<div class="item-Omnie item2-Omnie"><img
+						src="https://images.pexels.com/photos/3068266/pexels-photo-3068266.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+				</div>
+				<div class="item-Omnie item3-Omnie">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio natus quibusdam consequuntur, quod
+						vero ex tempore! Ipsa recusandae est id ipsum quibusdam, ducimus reprehenderit porro, voluptas
+						quaerat sapiente soluta. Quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Hic, esse consequatur, tempora praesentium nisi necessitatibus doloribus, deserunt voluptatibus
+						quo corrupti nesciunt? Error magni at eveniet dignissimos, doloribus sint dolore quam.</p>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<h2>Moje główne zalety:</h2>
+			<p>Wiedza</p>
+			<div class="wykres">
+				<div class="pie">80%</div>
+			</div>
+			<p>Doświadczenie</p>
+			<div class="wykres">
+				<div class="dru">65%</div>
+			</div>
+			<p>Elastyczność</p>
+			<div class="wykres">
+				<div class="trz">90%</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="grid-opinia">
+		<div class="item-opinia item1-opinia">
+			<h1>3</h1> Podopiecznych
+		</div>
+		<div class="item-opinia item2-opinia">
+			<h1>23</h1> Odbytych treningów
+		</div>
+		<div class="item-opinia item3-opinia">
+			<h1>16+</h1> Poozytywnych opini
+		</div>
+		<div class="item-opinia item4-opinia">
+			<h1>12</h1> Straconych kilogramów
+		</div>
+	</div>
+
+
+	<div id="oferty">
+
+		<div class="obraz2 podopieczni">Oferty</div>
+		<div class="grid-oferty">
+			<div class="item-oferty item1-oferty">
+				<h2>Plan Dietetyczny</h2>
+				<p class="pierwszeP">Dobrze sie odrzywiaj</p>
+				<p>Dieta pełno wartościowa i zbilansowana</p>
+				<p>Brak sztywno narzuconych posiłków</p>
+				<p>Ty decydujesz, ile wydajesz</p>
+				<p>Zawiera cenne wzakzówki co do<br>
+					kąponowania własnych posiłków</p>
+				<button>Sprawdź</button>
+			</div>
+			<div class="item-oferty item2-oferty">
+				<h2>Plan Treningowy</h2>
+				<p class="pierwszeP">Trenuj z głową</p>
+				<p>Przejrzysta forma</p>
+				<p>Bazuje na efektywnych i sprawdzonych<br>
+					metodach treningowych</p>
+				<p>Dostosowany inwidualnie do<br>
+					aktualnego celu, jak istopnia<br>
+					zaawansowania</p>
+				<p>Zawiera cenne wskazówki dotyczące<br>
+					efektywności</p>
+				<p>Uwzględnia aktualne problemy<br>
+					zdrowotne</p>
+				<button>Sprawdź</button>
+			</div>
+			<div class="item-oferty item3-oferty">
+				<h2>Pakiet Podstawowy</h2>
+				<p class="pierwszeP">Dieta + trening</p>
+				<p>Dieta pełnowartościowa i<br>
+					zbilansowana</p>
+				<p>Brak sztywno narzuconych posiłków</p>
+				<p>Przejrzysty i sprecyzowany plan<br>
+					treningowy</p>
+				<p>Cotygodniowy raporty na podstawie<br>
+					których wprowadzane są zmiany</p>
+				<p>Efekt GWARANTOWANTY</P>
+				<button>Sprawdź</button>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div id="kontakt">
+
+		<div class="obraz3 ZdjKontakt">Kontakt</div>
+		<div class="grid-kontakt">
+			<div class="item-kontakt item1-kontakt">
+				<h1>gdzie mnie znajdziesz</h1>
+				<p>Chciał bym poznać twoją opinie</p>
+			</div>
+			<div class="item-kontakt item2-kontakt" style="height:200px;width:400px;">
+				<div class="map" style="width:100%;height:100%;">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36369.49638720448!2d20.97839507887607!3d52.23815848569877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc6cbba9491d%3A0x1976d4bac02fae9d!2sMiejski%20Ogr%C3%B3d%20Zoologiczny%20w%20Warszawie!5e0!3m2!1spl!2spl!4v1579284028069!5m2!1spl!2spl"
+						width="100%" height="100%" frameborder="0" style="border-radius:50%;"
+						allowfullscreen=""></iframe>
+				</div>
+			</div>
+			<div class="item-kontakt item3-kontakt">
+				<p><i class="demo-icon icon-location"></i> &nbsp Europa, Polska</p>
+				<p><i class="demo-icon icon-phone"></i> &nbsp Telefon: +48534961220</p>
+				<p><i class="demo-icon icon-th-list"></i> &nbsp E-mail: mateuszmalolepszy@wp.pl</p>
+			</div>
+			<div class="item-kontakt item4-kontakt">
+
+				<div class="nameParent">
+					<input clasS="name" required="">
+					<label>nazwa</label>
+				</div>
+				<div class="emailParent">
+					<input clasS="email" required="">
+					<label>email</label>
+				</div>
+
+				<div class="meseParent">
+					<input clasS="mese" required="">
+					<label>wiadomoćś</label>
+				</div>
+				<button type="submit">Wyślij Wiadomość</button>
+
+			</div>
+		</div>
+
+	</div>
+
+	<footer>
+		<div class="stopka">
+
+		</div>
+	</footer>
+
+	<script>
+
+		$(document).ready(function () {
+			$('.menu').click(function () {
+				$('ul').toggleClass('active');
+			})
+		})
+
+		const Burger = document.getElementsByClassName('burger');
+		const Oferty = document.getElementsByClassName('item-oferty');
+		const Li = document.getElementsByTagName('li');
+		const Nav = document.getElementsByTagName('nav');
+
+		function checkScroll() {
+			var scroll = Math.round(window.scrollY / (document.documentElement.offsetHeight - window.innerHeight) * 100);
+			console.log(scroll);
+
+			if (scroll >= 5) {
+				Nav[1].style.setProperty('transition', '.5s linear');
+				Nav[0].classList.add('off');
+				Nav[1].classList.add('navbarScrollActive');
+			}
+			else {
+				Nav[1].style.setProperty('transition', '0s linear');
+				Nav[0].classList.remove('off');
+				Nav[1].classList.remove('navbarScrollActive');
+			}
+
+			if (scroll > 60) {
+				Oferty[0].classList.add('animacja2');
+			}
+			if (scroll > 61) {
+				Oferty[1].classList.add('animacja2');
+			}
+			if (scroll > 63) {
+				Oferty[2].classList.add('animacja2');
+			}
+		}
+
+		window.addEventListener('scroll', checkScroll);
+
+	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
