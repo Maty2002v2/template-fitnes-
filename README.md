@@ -10,7 +10,7 @@ Projekt powstał 2019 roku. Celem jest przepisanie i dopisanie kodu tak by stał
 
 Spełnić założenia:
 
-- Responsywność
+- Responsywność ✓
 - Dodanie obsługi zdarzeń
 - Zastąpienie jquery czymś bardziej atrakcyjniejszym
 - Wyodrębnie
